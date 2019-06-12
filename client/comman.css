@@ -1,0 +1,38 @@
+html {
+    scroll-behavior: smooth;
+  }
+
+.navbar-brand{
+    padding: 10px 20px;
+    height: 00px;
+    line-height: 300px;
+    
+}
+
+.navicon
+{
+    font-size: 25px;
+
+}
+
+.navicon:hover{   
+    color: rgba(243, 1, 231, 0.863);
+   
+ 
+}
+
+.text{
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-size: 22px;
+ padding: 0px 20px;
+ cursor: pointer;
+}
+
+.bg{
+    background-image: url("images/Welcome2.jpg");
+    background-color: gray;
+    background-size:cover ;
+    background-repeat:no-repeat;
+ 
+    
+}
