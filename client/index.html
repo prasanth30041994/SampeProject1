@@ -21,26 +21,25 @@
         </head>
 
     <title>Sample Project1</title>
-    <link rel="icon" type="image/ico" href="images/buffola_title_image.jpg"/>
+    <link rel="icon" type="image/ico" href="images/titleimage.png"/>
 </head>
 <body class="bg" ng-app="myApp">
-        
-   
-    
-        <nav class="navbar navbar-inverse fixed-nav-bar text ">
-                <div class="container-fluid">
-                  <ul class="nav navbar-nav">
-                    <li><a href="#/" ><span class="glyphicon glyphicon-home navicon" ></span>&nbsp;Home</a></li>
+            <nav class="navbar navbar-inverse text ">
+               
+                <div class="container-fluid" >
+                
+                  <ul class="nav navbar-nav ">
+                    <li><a href="#/home" ><span class="glyphicon glyphicon-home navicon" ></span>&nbsp;Home</a></li>
                     <li><a href="#/about"><span class="glyphicon glyphicon-user navicon"></span>&nbsp;About</a></li>
                     <li><a href="#/contact"><span class="glyphicon glyphicon-earphone navicon"></span>&nbsp;Contact us</a></li>
                    
                   </ul>
+               
                 </div>
               </nav>
        
         
             <div ng-view> </div>
                 <script src="ctrl.js"></script>
-     
 </body>
 </html>

@@ -5,8 +5,8 @@ myapp.config(function($routeProvider){
     $routeProvider
 
   .when('/', {
-    templateUrl : 'home.html',
-    controller:'homectrl'
+    templateUrl : 'contact.html',
+    controller:'contactctrl'
   
   })
   .when('/about', {
@@ -14,10 +14,10 @@ myapp.config(function($routeProvider){
     controller:'aboutctrl'
    
   })
-  .when('/contact', {
-    templateUrl : 'contact.html',
-    controller:'contactctrl'
-  })
+  // .when('/contact', {
+  //   templateUrl : 'contact.html',
+  //   controller:'contactctrl'
+  // })
   .otherwise({
       redirectTo: '/'
     });
@@ -36,7 +36,17 @@ myapp.controller('aboutctrl',function($scope){
 
 myapp.controller('contactctrl',function($scope){
 
-    $scope.message = 'Hello ';
+  $scope.submit=function()
+  {
+    alert("hi")
+    var datas={
+      name:$scope.name,
+      email:$scope.email,
+      phnumber:$scope.phone,
+      comments:$scope.comments
+    }
+
+  }
 
 });
 
