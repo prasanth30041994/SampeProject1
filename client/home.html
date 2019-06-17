@@ -1,32 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body ng-contoller="homectrl" >
-    
-<div class="container homehtml">
-    
-    <h1>Home Page</h1>
-    <p>Definition - What does Home Page mean?
-            A home page is the default or front page of a site. 
-            It is the first page that visitors see when they load a URL. 
-            Web managers can control the home page as a way of directing the user experience.</p>
 
-            <h1>Techopedia explains Home Page</h1>
-            <p>Home pages are located in the root directory of the website. Many home pages act as a virtual directory for a site — they provide top-level menus where visitors can go deeper into various areas of the site. For instance, a typical website has a homepage with menu items like “about,” “contact,” “products,” “services,” “press” or “news.”
-                    In addition, the home page often serves to orient visitors by providing titles, headlines and images and visuals that show what the website is about, and in some cases, who owns it and maintains it. One of the best examples is the average business website, which has the business name in a prominent place, and often features the logo, while also showing pictures related to that business, for instance, who works there, what the business produces, or what it does in a community.
-                     A home page is part of the natural way that the Internet has emerged to oriented Web users and help them navigate all of the many sites on the global network.
-                    </p>
-                    <h1>History of home pages</h1>
-                    <p>
-                            In the early days of the World Wide Web in the first half of the 1990s, an important part of web pages belonged to students or teachers with a UNIX account in their university. System administrators of such systems installed an HTTP server pointing its root directory to the directory containing the users accounts. On UNIX, the base directory of an account is called "home", and the HOME environment variable contains its path (for example /home/my_username). The URL of the home page usually has the format https://example.edu/~my_username/.[11] Thus the term home page appeared and then spread to its current usage.
-                            A personal home page historically has served as a means of self-portrayal, job-related presentation, and pure enjoyment, giving way to professional advancement and social interaction.[12] Owing to the rise of social media sites, personal home pages are no longer as common as during the mid-late 1990s and early-2000s.
-
-                    </p>
-         </div>
-</body>
-</html>
+        <div ng-controller="homeCtrl" >
+                <nav class="navbar navbar-inverse text ">
+               
+                        <div class="container-fluid" >
+                        
+                          <ul class="nav navbar-nav ">
+                            <li><a href="#/home"><span class="glyphicon glyphicon-home navicon" ></span>&nbsp;Home</a></li>
+                            <li><a href="#/about"><span class="glyphicon glyphicon-user navicon"></span>&nbsp;About</a></li>
+                            <li><a href="#/contact"><span class="glyphicon glyphicon-earphone navicon"></span>&nbsp;Contact us</a></li>
+                           
+                          </ul>
+                          
+                        </div>
+                      </nav>
+                  
+                <div class="container homehtml">
+                    
+                    <h1>Home Page</h1>
+                    <p>Definition - What does Home Page mean?
+                            A home page is the default or front page of a site. 
+                            It is the first page that visitors see when they load a URL. 
+                            Web managers can control the home page as a way of directing the user experience.</p>
+                
+                            <h1>Techopedia explains Home Page</h1>
+                            <p>Home pages are located in the root directory of the website. Many home pages act as a virtual directory for a site — they provide top-level menus where visitors can go deeper into various areas of the site. For instance, a typical website has a homepage with menu items like “about,” “contact,” “products,” “services,” “press” or “news.”
+                                    In addition, the home page often serves to orient visitors by providing titles, headlines and images and visuals that show what the website is about, and in some cases, who owns it and maintains it. One of the best examples is the average business website, which has the business name in a prominent place, and often features the logo, while also showing pictures related to that business, for instance, who works there, what the business produces, or what it does in a community.
+                                     A home page is part of the natural way that the Internet has emerged to oriented Web users and help them navigate all of the many sites on the global network.
+                                    </p>
+                                    <h1>History of home pages</h1>
+                                    <p>
+                                            In the early days of the World Wide Web in the first half of the 1990s, an important part of web pages belonged to students or teachers with a UNIX account in their university. System administrators of such systems installed an HTTP server pointing its root directory to the directory containing the users accounts. On UNIX, the base directory of an account is called "home", and the HOME environment variable contains its path (for example /home/my_username). The URL of the home page usually has the format https://example.edu/~my_username/.[11] Thus the term home page appeared and then spread to its current usage.
+                                            A personal home page historically has served as a means of self-portrayal, job-related presentation, and pure enjoyment, giving way to professional advancement and social interaction.[12] Owing to the rise of social media sites, personal home pages are no longer as common as during the mid-late 1990s and early-2000s.
+                
+                                    </p>
+                         </div>
+                   
