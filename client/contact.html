@@ -1,6 +1,48 @@
+<style>
+.contactbody{
+  scroll-behavior: smooth;
+}
 
-        <div class="contactbody" ng-controller="contactCtrl">
-            <nav class="navbar navbar-inverse text ">
+
+    .menu li {
+     list-style: none;
+     text-align: center;
+     float: left;
+     padding: 12px;
+ }
+
+ .section-1 {
+     background: #000;
+     color: #fff!important;
+ }
+
+ .menu li a {
+     color: #fff!important
+ }
+ .row-control{
+     padding:10px 15px;
+     text-align: center;
+ }
+
+ #datatable{
+  
+   border:3px solid black;
+   background: transparent;
+   width: 82%;
+   margin-top: 50%;
+  
+   margin-left: 6%;
+ 
+   font-size: 18px;
+   color: black;
+   background: transparent;
+  
+ 
+ }
+</style>
+        <div class="contactbody" ng-controller="contactCtrl" ng-init="pageload()">
+          <div>
+            <nav class="navbar navbar-inverse text " >
                
                 <div class="container-fluid" >
                 
@@ -68,12 +110,36 @@
                   </div>
                   <div class="buttonalign"> 
                     <input type="button" class="button" value="Submit" ng-click="submit()">
-                    <input type="button" class="button1" value="Reset" ng-click="clear()">
+                    <input type="button" class="button1" value="Reset" ng-click="clear()"><br>
+                    <button ng-click="hideshow()" class="buttonoutline">Show Records</button>
                   </div>
                   
-             
+                
                 </div>
-          
+                <div class="container" >
+                  
+                    <table class="table table-bordered table-hover parenttable" id="datatable" ng-show="IsVisible">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Message</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="contactusdetails in demo" ng-dblclick="doubleclick()">
+                                    <td><input type="text" ng-model="contactusdetails.name"></td>
+                                    <td>{{contactusdetails.email}}</td>
+                                    <td>{{contactusdetails.phone}}</td>
+                                    <td>{{contactusdetails.comments}}</td>
+                                  </tr>
+                            </tbody>
+                        </table>
+                   </div>
+                  </div>
+           
                
 
             

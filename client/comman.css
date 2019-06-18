@@ -1,9 +1,12 @@
 
+
 .navbar-brand{
     padding: 10px 20px;
     height: 00px;
     line-height: 300px;
     position: fixed;
+    position: -webkit-sticky;
+    position: sticky;
 }
 
 
@@ -176,8 +179,8 @@ p{
 
 
 ::placeholder { 
-    color:black;
-    opacity: 0.7; 
+    color:rgb(0, 0, 0);
+    opacity: 0.6; 
     
   }
 
@@ -288,6 +291,30 @@ hr{
   line-height:50px;
   font-family:Arial, Helvetica, sans-serif;
  
+  
+}
+
+.buttonoutline{
+  outline: none;
+  background: transparent;
+  border:transparent;
+  font-size: 15px;
+  margin-top: 3%;
+  margin-left:17% ;
+  color: rgb(207, 200, 200);
+  scroll-behavior: smooth;
+  
+}
+
+.buttonoutline:hover{
+  outline: none;
+  background: transparent;
+  border:transparent;
+  font-size: 15px;
+  margin-top: 3%;
+  margin-left:17% ;
+  color:rgb(240, 22, 94)
+  
   
 }
 

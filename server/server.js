@@ -36,4 +36,15 @@ app.post('/submit', function (req, res) {
         }
     });
 });
-app.listen(8005);
+
+app.get('/contatus', function (req, res) {
+    users.find({}).exec(function (err, demo1) {
+        if (err) {
+
+        } else {
+            res.send({ status: "1", data: demo1 });
+        }
+    });
+});
+
+app.listen(8010);
