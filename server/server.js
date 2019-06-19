@@ -47,4 +47,35 @@ app.get('/contatus', function (req, res) {
     });
 });
 
+
+app.put('/update', function (req, res) {
+    var update = {
+        name: req.body.name,
+        email: req.body.email,
+        phone: req.body.phone,
+        comments: req.body.comments,
+    }
+    var datavalue = new users(req.body);
+    users.findOneAndUpdate({ '_id': req.body.id }, update).exec(function (err, demo1) {
+        if (err) {
+
+        } else {
+
+            res.send({ status: "1" });
+        }
+    });
+});
+
+app.delete('/deldata/:id', function (req, res) {
+    console.log(req.params.id, "delete data")
+    users.findOne({ '_id': req.params.id }).exec(function (err, demo1) {
+        if (err) {
+
+        } else {
+            demo1.remove();
+            res.send({ status: "1" });
+        }
+    });
+});
+
 app.listen(8010);

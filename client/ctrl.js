@@ -19,58 +19,87 @@ app.config(function ($routeProvider) {
         });
 });
 app.controller("contactCtrl",function($scope,$http){
+    $scope.Submit="Submit";
 
-
-   
-    $scope.clear=function(){
+  //clear records
+      $scope.clear=function(){
         $scope.name="";
         $scope.email="";
         $scope.phone="";
         $scope.comments="";
+        $scope.pageload();
     }
 
+//hide table
 $scope.hideshow=function(){
+    
+    
     if($scope.IsVisible==true){
         $scope.IsVisible = $scope.IsVisible = false;
+       
         
     }else{
         $scope.IsVisible = $scope.IsVisible = true;
+       
     }
-    
+   
 }
 
-
-$scope.doubleclick=function()
+//data bind
+$scope.doubleclick=function(contactusdetails)
 {
-    $scope.name=$scope.contactusdetails.name;
+    $scope.Submit="Update";
+    $scope.name=contactusdetails.name;
+    $scope.email=contactusdetails.email;
+    $scope.phone=contactusdetails.phone;
+    $scope.comments=contactusdetails.comments;
+    $scope.id=contactusdetails._id;
 }
 
+//save/update data 
   $scope.submit=function(){
           var values = {
                     name:$scope.name,
                     email:$scope.email,
                     phone:$scope.phone,
-                    comments:$scope.comments
+                    comments:$scope.comments,
+                    id:$scope.id
                   
           }
         
+          if(values.id==""||values.id==undefined){
+
+            $http.post('http://localhost:8010/submit', values).then(function (response) {                
+                if(response.data.code == '0'){ 
+                    swal("Submit", "Sucessfully!", "success");
+                } else {
+                    swal("Sorry", "Failed", "failed");
+                }
+                $scope.pageload();
+            }); 
+
+          }else{
+
+         
+            $http.put('http://localhost:8010/update', values).success(function (response) {
+                if (response.status == '1') {
+                    swal("Update", " Successfully!", "success");
+                    $scope.pageload();
+                }
+            });
+          }
 
 
-          $http.post('http://localhost:8010/submit', values).then(function (response) {                
-                  if(response.data.code == '0'){ 
-                      swal("Good job!", "Submit Sucessfully!", "success");
-                  } else {
-                      swal("Sorry", "Failed", "failed");
-                  }
-              });
+      
 
-          
+             
               $scope.clear();
-              $scope.pageload();
+             
       }
 
           //get datas
           $scope.pageload=function(){
+            $scope.Submit="Submit";
             $http.get('http://localhost:8010/contatus/').success(function (response) {
                 console.log(response.data)
                
@@ -81,6 +110,17 @@ $scope.doubleclick=function()
                 }
             });
           }
+
+          $scope.deletedata = function (contactusdetails) {
+             
+              var id=contactusdetails._id;
+            $http.delete('http://localhost:8010/deldata/' + id).success(function (response) {
+                if (response.status == '1') {
+                    swal("Record Deleted", "Successfully!", "success");
+                    $scope.pageload();
+                }
+            });
+        }
       
 });
 

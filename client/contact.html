@@ -1,145 +1,152 @@
 <style>
-.contactbody{
-  scroll-behavior: smooth;
-}
+  .menu li {
+    list-style: none;
+    text-align: center;
+    float: left;
+    padding: 12px;
+  }
+
+  .section-1 {
+    background: #000;
+    color: #fff !important;
+  }
+
+  .menu li a {
+    color: #fff !important
+  }
+
+  .row-control {
+    padding: 10px 15px;
+    text-align: center;
+  }
+
+  #datatable {
+
+    border: 2px solid black;
+    background: transparent;
+    width: 82%;
+    margin-top: 50%;
+    margin-left: 6%;
+    font-size: 16px;
+    color: rgb(0, 0, 0);
+    background:rgba(128, 128, 128, 0.247);
+    
+    
+
+  }
+
+  #datatablerows:hover {
+    background-color: rgba(190, 190, 196, 0.315);
+  }
 
 
-    .menu li {
-     list-style: none;
-     text-align: center;
-     float: left;
-     padding: 12px;
- }
-
- .section-1 {
-     background: #000;
-     color: #fff!important;
- }
-
- .menu li a {
-     color: #fff!important
- }
- .row-control{
-     padding:10px 15px;
-     text-align: center;
- }
-
- #datatable{
-  
-   border:3px solid black;
-   background: transparent;
-   width: 82%;
-   margin-top: 50%;
-  
-   margin-left: 6%;
- 
-   font-size: 18px;
-   color: black;
-   background: transparent;
-  
- 
- }
+  #datatablehead {
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+  }
 </style>
-        <div class="contactbody" ng-controller="contactCtrl" ng-init="pageload()">
-          <div>
-            <nav class="navbar navbar-inverse text " >
-               
-                <div class="container-fluid" >
-                
-                  <ul class="nav navbar-nav ">
-                    <li><a href="#/home"><span class="glyphicon glyphicon-home navicon" ></span>&nbsp;Home</a></li>
-                    <li><a href="#/about"><span class="glyphicon glyphicon-user navicon"></span>&nbsp;About</a></li>
-                    <li><a href="#/contact"><span class="glyphicon glyphicon-earphone navicon"></span>&nbsp;Contact us</a></li>
-                   
-                  </ul>
-                  
-                </div>
-              </nav>
-                <div class="a">
-                  <div class="centered">
-                     
-                        <div style="line-height:20pt;">
-                                <span class="glyphicon glyphicon-home navicon" ></span>
-                                N.Prasanth <br>
-                                No,61 Pillaiyar Kovil Street<br>
-                                Sabthaliburam<br>
-                                Vellore- 632011,Tamilnadu<br>
-                                India
-                        </div>
-                                <span class="glyphicon glyphicon-earphone navicon" ></span>&nbsp;+91-8807573887 <br>    
-                                <span class="glyphicon glyphicon-envelope navicon" ></span>&nbsp;prasanth30041994@gmail.com <br>
-                                <span class="glyphicon glyphicon-globe navicon" ></span>&nbsp;www.SampleProject.com
-                    
-                  </div>
-                </div>
-                
-                <div class="b">
-                  <div class="centered">
-                       
-                    <table class="lefttable">
-                        <tr>
-                            <td> 
-                                <input type="text" ng-model="name" placeholder="Name" id="inputtext">
-                            </td>
-                        </tr>
-    
-                        <tr>
-                                <td> 
-                                    <input type="email" ng-model="email" placeholder="E-mail" id="inputtext">
-                                </td>
-                            </tr>
-    
-                            <tr>
-                                    <td> 
-                                        <input type="number" ng-model="phone" placeholder="Phone Number" id="inputtext" >
-                                    </td>
-                                </tr>
-                                <tr>
-                                        <td> 
-                                            <input type="textarea" ng-model="comments" placeholder="Message" id="inputtextarea">
-                                        </td>
-                                    </tr>
-                                   
-                                    
-                    </table>
-            
-                        
-              
-    
-                       
-                  </div>
-                  <div class="buttonalign"> 
-                    <input type="button" class="button" value="Submit" ng-click="submit()">
-                    <input type="button" class="button1" value="Reset" ng-click="clear()"><br>
-                    <button ng-click="hideshow()" class="buttonoutline">Show Records</button>
-                  </div>
-                  
-                
-                </div>
-                <div class="container" >
-                  
-                    <table class="table table-bordered table-hover parenttable" id="datatable" ng-show="IsVisible">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Message</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr ng-repeat="contactusdetails in demo" ng-dblclick="doubleclick()">
-                                    <td><input type="text" ng-model="contactusdetails.name"></td>
-                                    <td>{{contactusdetails.email}}</td>
-                                    <td>{{contactusdetails.phone}}</td>
-                                    <td>{{contactusdetails.comments}}</td>
-                                  </tr>
-                            </tbody>
-                        </table>
-                   </div>
-                  </div>
-           
-               
+<div class="contactbody" ng-controller="contactCtrl" ng-init="pageload()">
+  <div>
+    <nav class="navbar navbar-inverse text ">
 
-            
+      <div class="container-fluid">
+
+        <ul class="nav navbar-nav ">
+          <li><a href="#/home"><span class="glyphicon glyphicon-home navicon"></span>&nbsp;Home</a></li>
+          <li><a href="#/about"><span class="glyphicon glyphicon-user navicon"></span>&nbsp;About</a></li>
+          <li><a href="#/contact"><span class="glyphicon glyphicon-earphone navicon"></span>&nbsp;Contact us</a></li>
+
+        </ul>
+
+      </div>
+    </nav>
+    <div class="a">
+      <div class="centered">
+
+        <div style="line-height:20pt;">
+          <span class="glyphicon glyphicon-home navicon"></span>
+          N.Prasanth <br>
+          No,61 Pillaiyar Kovil Street<br>
+          Sabthaliburam<br>
+          Vellore- 632011,Tamilnadu<br>
+          India
+        </div>
+        <span class="glyphicon glyphicon-earphone navicon"></span>&nbsp;+91-8807573887 <br>
+        <span class="glyphicon glyphicon-envelope navicon"></span>&nbsp;prasanth30041994@gmail.com <br>
+        <span class="glyphicon glyphicon-globe navicon"></span>&nbsp;www.SampleProject.com
+
+      </div>
+    </div>
+
+    <div class="b">
+      <div class="centered">
+
+        <table class="lefttable" >
+          <tr>
+            <td>
+              <input type="text" ng-model="name" placeholder="Name" id="inputtext">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="email" ng-model="email" placeholder="E-mail" id="inputtext">
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <input type="number" ng-model="phone" placeholder="Phone Number" id="inputtext"/>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="textarea" ng-model="comments" placeholder="Message" id="inputtextarea">
+            </td>
+          </tr>
+
+
+        </table>
+
+
+
+
+
+      </div>
+      <div class="buttonalign">
+
+        <button class="button" ng-click="submit()">{{Submit}}</button>
+        <input type="button" class="button1" value="Reset" ng-click="clear()"><br>
+        <button ng-click="hideshow()" class="buttonoutline">Show All Records</button>
+        
+      </div>
+
+
+    </div>
+    <div class="container">
+
+      <table class="table table-bordered table-hover parenttable" id="datatable" ng-show="IsVisible" >
+        <thead id="datatablehead">
+          <tr>
+            <th>Delete</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Message</th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="contactusdetails in demo" ng-dblclick="doubleclick(contactusdetails)" id="datatablerows">
+            <td><input type="button" ng-model="contactusdetails.Remove" value="Remove" class="buttonremove" ng-click="deletedata(contactusdetails)" /></td>
+            <td>{{contactusdetails.name}}</td>
+            <td>{{contactusdetails.email}}</td>
+            <td>{{contactusdetails.phone}}</td>
+            <td>{{contactusdetails.comments}}</td>
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
